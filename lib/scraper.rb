@@ -13,7 +13,10 @@ require 'pry'
 # :linkedin
 # :github
 # :blog   href = ref.css("a").map{|anchor| anchor["href"]}
+<<<<<<< HEAD
 # anchor["href"].split("/").join(".").split(".").include?("linkedin")?
+=======
+>>>>>>> 27a7f3c7a4f656bf5800b6189a2d9d2da02d278b
 # :profile_quote
 # :bio
 class Scraper
@@ -35,6 +38,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
+<<<<<<< HEAD
     profile = {}
     ref = doc.css("div.social-icon-container")
     ref.css("a").map do |anchor|
@@ -52,6 +56,20 @@ class Scraper
     bio = doc.css("div.bio-content.content-holder")
     profile[:bio] = bio.css("div.description-holder").text.strip
     profile
+=======
+    ref = doc.css("div.social-icon-container")
+    href = ref.css("a").map{|anchor| anchor["href"]}
+    profile = {
+      :twitter => href[0],
+      :linkedin => href[1],
+      :github => href[2],
+      :blog => href[3]
+    }
+    profile[:profile_quote] = doc.css("div.profile-quote").text
+    bio = doc.css("div.bio-content.content-holder").text
+    profile[:bio] = bio.css("div.description-holder").text.strip
+
+>>>>>>> 27a7f3c7a4f656bf5800b6189a2d9d2da02d278b
   end
 
 end
