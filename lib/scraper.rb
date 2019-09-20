@@ -64,7 +64,7 @@ class Scraper
       :blog => href[3]
     }
     profile[:profile_quote] = doc.css("div.profile-quote").text
-    bio = doc.css("div.bio-content.content-holder").text
+    bio = doc.css("div.bio-content.content-holder")
     profile[:bio] = bio.css("div.description-holder").text.strip
 
   end
