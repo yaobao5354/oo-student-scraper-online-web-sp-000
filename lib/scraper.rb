@@ -13,10 +13,7 @@ require 'pry'
 # :linkedin
 # :github
 # :blog   href = ref.css("a").map{|anchor| anchor["href"]}
-<<<<<<< HEAD
 # anchor["href"].split("/").join(".").split(".").include?("linkedin")?
-=======
->>>>>>> 27a7f3c7a4f656bf5800b6189a2d9d2da02d278b
 # :profile_quote
 # :bio
 class Scraper
