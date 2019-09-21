@@ -26,7 +26,7 @@ class Scraper
     student_hash = {
       :name => profile.css("h4.student-name").text,
       :location => profile.css("p.student-location").text,
-      :profile_url => profile.css("a").first["href"]
+      :profile_url => profile.css("a").first["href"].to_s
     }
     student_array << student_hash
     end
