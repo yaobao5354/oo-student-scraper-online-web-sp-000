@@ -28,6 +28,7 @@ class Scraper
       :location => profile.css("p.student-location").text,
       :profile_url => profile.css("a").first["href"]
     }
+    binding.pry 
     student_array << student_hash
     end
     student_array
