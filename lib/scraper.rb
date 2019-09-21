@@ -52,18 +52,6 @@ class Scraper
     bio = doc.css("div.bio-content.content-holder")
     profile[:bio] = bio.css("div.description-holder").text.strip
     profile
-    ref = doc.css("div.social-icon-container")
-    href = ref.css("a").map{|anchor| anchor["href"]}
-    profile = {
-      :twitter => href[0],
-      :linkedin => href[1],
-      :github => href[2],
-      :blog => href[3]
-    }
-    profile[:profile_quote] = doc.css("div.profile-quote").text
-    bio = doc.css("div.bio-content.content-holder")
-    profile[:bio] = bio.css("div.description-holder").text.strip
-    profile
   end
 
 end
